@@ -9,6 +9,7 @@ subject & activity combination. 68 columns, separated by single spaces.
 * ID number for the subject, i.e. a person in the original HAR study
 * integer
 * possible values: 1..30
+* units: none
 
 *activity*
 * activity class
@@ -19,6 +20,7 @@ subject & activity combination. 68 columns, separated by single spaces.
 * 66 variables for averages of original HAR measurements
 * numeric
 * possible values: -1..1
+* units: none
 
 The measurement average variables use the same naming as in the original
 HAR measurement data. The naming convention and explanations for
