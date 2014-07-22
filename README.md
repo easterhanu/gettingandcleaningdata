@@ -45,10 +45,10 @@ tBodyAcc-mean()-X tBodyAcc-mean()-Y ... fBodyBodyGyroJerkMag-std()
 ### Phase 2: Add the Activity Column
 
 In the second phase, `run_analysis.R` loads and merges the activity class information for
-the measurements from the `train/y_train.txt` and `test/y_test.txt`files. These files
+the measurements from the `train/y_train.txt` and `test/y_test.txt` files. These files
 have numeric activity class values (1-6), which are translated into human readable factor
 names (WALKING, SITTING etc.) using the mappings in `activity_labels.txt`. Finally, the
-activity class factors are added as the "activity" column into our `data` data frame:
+activity class factors are added as the "activity" column into the `data` data frame:
 
 ```
 activity tBodyAcc-mean()-X tBodyAcc-mean()-Y ... fBodyBodyGyroJerkMag-std()
@@ -57,14 +57,30 @@ STANDING 0.28858451 -2.029417e-02 ... -0.99069746
 
 ### Phase 3: Add the Subject Column
 
-In the third phase, `run_analysis.R` load and merges the subject information (ID numbers
+In the third phase, `run_analysis.R` loads and merges the subject information (ID numbers
 1-30 for persons that participated in the HAR study) from the `train/subject_train.txt`
 and `test/subject_test.txt` files. Subject ID numbers are added as the "subject" column
-into our `data` data frame:
+into the `data` data frame:
 
 ```
 subject activity tBodyAcc-mean()-X tBodyAcc-mean()-Y ... fBodyBodyGyroJerkMag-std()
 1 STANDING 0.28858451 -2.029417e-02 ... -0.99069746
 ```
+
+### Phase 4: Create Summary Data Set
+
+In the fourth and final phase, `run_analysis.R` creates a separate tidy summary data
+set by calculating averages of each 66 measurement variables for each combination of
+subject and activity. This results as 30 subjects x 6 different activities = 180
+rows of averages. The number and names of columns is not changed
+
+
+```
+subject activity tBodyAcc-mean()-X tBodyAcc-mean()-Y ... fBodyBodyGyroJerkMag-std()
+1 STANDING 0.2789176 -0.016137590 ... -0.99467112
+```
+
+The summary data set is saved as a file called `HAR_summary.txt` in the current
+working directory.
 
 
