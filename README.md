@@ -81,6 +81,6 @@ subject activity tBodyAcc-mean()-X tBodyAcc-mean()-Y ... fBodyBodyGyroJerkMag-st
 ```
 
 The summary data set is saved as a file called `HAR_summary.txt` in the current
-working directory.
+working directory. See the `CodeBook.md` file for summary data description.
 
 
